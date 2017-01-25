@@ -2,9 +2,8 @@ var express = require('express');
 
 var server = express();
 
-server.get('/form', function(req, res){
-    res.status(200).send('ok');
-});
+server.use('/', express.static(__dirname));
+
 
 server.get('/form', function(req,res) {
     console.log(req.query);
