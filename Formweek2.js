@@ -1,12 +1,14 @@
-var express = require('express')
+var express = require('express');
 
-var server = express()
+var server = express();
 
-server.use('/',express.static(_dirname));
-
-server.get('/form', function(req, set){
-{
-    res.status(200), send(ok);
+server.get('/form', function(req, res){
+    res.status(200).send('ok');
 });
 
-server.listen(8080);
+server.get('/form', function(req,res) {
+    console.log(req.query);
+    res.status(200).send('this is a post request');
+});
+
+    server.listen(8080);
